@@ -1,0 +1,6 @@
+.vs/
+APPPInCSharp_StatePattern.Console/bin/
+APPPInCSharp_StatePattern.Console/obj/
+APPPInCSharp_StatePattern.UnitTests/bin/
+APPPInCSharp_StatePattern.UnitTests/obj/
+packages/
