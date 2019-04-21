@@ -7,6 +7,7 @@
             turnstileController = action;
         }
 
+        //Private
         //Set [assembly: InternalsVisibleTo("APPPInCSharp_StatePattern.UnitTests")]
         internal State state = State.LOCKED;
 
