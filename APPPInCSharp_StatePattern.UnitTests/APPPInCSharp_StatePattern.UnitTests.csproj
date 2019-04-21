@@ -59,7 +59,9 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StateTransitionTableTurnstileTests.cs" />
     <Compile Include="SwitchCaseTurnstileTests.cs" />
+    <Compile Include="TurnstileTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

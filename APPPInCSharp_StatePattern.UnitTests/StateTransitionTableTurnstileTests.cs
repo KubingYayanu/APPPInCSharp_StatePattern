@@ -3,15 +3,15 @@
 namespace APPPInCSharp_StatePattern.UnitTests
 {
     [TestFixture]
-    public class SwitchCaseTurnstileTests : TurnstileTest
+    public class StateTransitionTableTurnstileTests : TurnstileTest
     {
-        private SwitchCaseTurnstile turnstile;
+        private StateTransitionTableTurnstile turnstile;
 
         [SetUp]
         public void SetUp()
         {
             controllerSpoof = new TurnstileControllerSpoof();
-            turnstile = new SwitchCaseTurnstile(controllerSpoof);
+            turnstile = new StateTransitionTableTurnstile(controllerSpoof);
         }
 
         [Test]
