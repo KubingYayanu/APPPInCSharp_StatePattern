@@ -12,18 +12,18 @@ namespace APPPInCSharp_StatePattern
             Action thankYou = () => controller.Thankyou();
             Action lockAction = () => controller.Lock();
 
-            AddTransition(State.LOCKED, Event.COIN, State.UNLOCKED, unlock);
-            AddTransition(State.LOCKED, Event.PASS, State.LOCKED, alarm);
-            AddTransition(State.UNLOCKED, Event.COIN, State.UNLOCKED, thankYou);
-            AddTransition(State.UNLOCKED, Event.PASS, State.LOCKED, lockAction);
+            AddTransition(TurnstileState.LOCKED, TurnstileEvent.COIN, TurnstileState.UNLOCKED, unlock);
+            AddTransition(TurnstileState.LOCKED, TurnstileEvent.PASS, TurnstileState.LOCKED, alarm);
+            AddTransition(TurnstileState.UNLOCKED, TurnstileEvent.COIN, TurnstileState.UNLOCKED, thankYou);
+            AddTransition(TurnstileState.UNLOCKED, TurnstileEvent.PASS, TurnstileState.LOCKED, lockAction);
         }
 
         //Private
-        internal State state = State.LOCKED;
+        internal TurnstileState state = TurnstileState.LOCKED;
 
         private IList<Transition> transitions = new List<Transition>();
 
-        public void HandleEvent(Event e)
+        public void HandleEvent(TurnstileEvent e)
         {
             foreach (var transition in transitions)
             {
@@ -35,14 +35,14 @@ namespace APPPInCSharp_StatePattern
             }
         }
 
-        private void AddTransition(State start, Event e, State end, Action action)
+        private void AddTransition(TurnstileState start, TurnstileEvent e, TurnstileState end, Action action)
         {
             transitions.Add(new Transition(start, e, end, action));
         }
 
         private class Transition
         {
-            public Transition(State start, Event e, State end, Action a)
+            public Transition(TurnstileState start, TurnstileEvent e, TurnstileState end, Action a)
             {
                 startState = start;
                 trigger = e;
@@ -50,9 +50,9 @@ namespace APPPInCSharp_StatePattern
                 action = a;
             }
 
-            public State startState;
-            public Event trigger;
-            public State endState;
+            public TurnstileState startState;
+            public TurnstileEvent trigger;
+            public TurnstileState endState;
             public Action action;
         }
     }

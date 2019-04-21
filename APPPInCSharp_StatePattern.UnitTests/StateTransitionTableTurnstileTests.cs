@@ -17,46 +17,46 @@ namespace APPPInCSharp_StatePattern.UnitTests
         [Test]
         public void InitialConditions()
         {
-            Assert.AreEqual(State.LOCKED, turnstile.state);
+            Assert.AreEqual(TurnstileState.LOCKED, turnstile.state);
         }
 
         [Test]
         public void CoinInLockedState()
         {
-            turnstile.state = State.LOCKED;
-            turnstile.HandleEvent(Event.COIN);
+            turnstile.state = TurnstileState.LOCKED;
+            turnstile.HandleEvent(TurnstileEvent.COIN);
 
-            Assert.AreEqual(State.UNLOCKED, turnstile.state);
+            Assert.AreEqual(TurnstileState.UNLOCKED, turnstile.state);
             Assert.IsTrue(controllerSpoof.unlockCalled);
         }
 
         [Test]
         public void CoinInUnlockedState()
         {
-            turnstile.state = State.UNLOCKED;
-            turnstile.HandleEvent(Event.COIN);
+            turnstile.state = TurnstileState.UNLOCKED;
+            turnstile.HandleEvent(TurnstileEvent.COIN);
 
-            Assert.AreEqual(State.UNLOCKED, turnstile.state);
+            Assert.AreEqual(TurnstileState.UNLOCKED, turnstile.state);
             Assert.IsTrue(controllerSpoof.thankyouCalled);
         }
 
         [Test]
         public void PassInLockedState()
         {
-            turnstile.state = State.LOCKED;
-            turnstile.HandleEvent(Event.PASS);
+            turnstile.state = TurnstileState.LOCKED;
+            turnstile.HandleEvent(TurnstileEvent.PASS);
 
-            Assert.AreEqual(State.LOCKED, turnstile.state);
+            Assert.AreEqual(TurnstileState.LOCKED, turnstile.state);
             Assert.IsTrue(controllerSpoof.alarmCalled);
         }
 
         [Test]
         public void PassInUnlockedState()
         {
-            turnstile.state = State.UNLOCKED;
-            turnstile.HandleEvent(Event.PASS);
+            turnstile.state = TurnstileState.UNLOCKED;
+            turnstile.HandleEvent(TurnstileEvent.PASS);
 
-            Assert.AreEqual(State.LOCKED, turnstile.state);
+            Assert.AreEqual(TurnstileState.LOCKED, turnstile.state);
             Assert.IsTrue(controllerSpoof.lockCalled);
         }
     }

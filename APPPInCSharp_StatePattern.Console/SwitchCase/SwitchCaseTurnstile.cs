@@ -9,34 +9,34 @@
 
         //Private
         //Set [assembly: InternalsVisibleTo("APPPInCSharp_StatePattern.UnitTests")]
-        internal State state = State.LOCKED;
+        internal TurnstileState state = TurnstileState.LOCKED;
 
         private TurnstileController turnstileController;
 
-        public void HandleEvent(Event e)
+        public void HandleEvent(TurnstileEvent e)
         {
             switch (state)
             {
-                case State.LOCKED:
+                case TurnstileState.LOCKED:
                     switch (e)
                     {
-                        case Event.COIN:
-                            state = State.UNLOCKED;
+                        case TurnstileEvent.COIN:
+                            state = TurnstileState.UNLOCKED;
                             turnstileController.Unlock();
                             break;
-                        case Event.PASS:
+                        case TurnstileEvent.PASS:
                             turnstileController.Alarm();
                             break;
                     }
                     break;
-                case State.UNLOCKED:
+                case TurnstileState.UNLOCKED:
                     switch (e)
                     {
-                        case Event.COIN:
+                        case TurnstileEvent.COIN:
                             turnstileController.Thankyou();
                             break;
-                        case Event.PASS:
-                            state = State.LOCKED;
+                        case TurnstileEvent.PASS:
+                            state = TurnstileState.LOCKED;
                             turnstileController.Lock();
                             break;
                     }

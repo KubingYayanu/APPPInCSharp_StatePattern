@@ -1,12 +1,12 @@
 ﻿namespace APPPInCSharp_StatePattern
 {
-    public enum State
+    public enum TurnstileState
     {
         LOCKED,
         UNLOCKED
     }
 
-    public enum Event
+    public enum TurnstileEvent
     {
         COIN,
         PASS
