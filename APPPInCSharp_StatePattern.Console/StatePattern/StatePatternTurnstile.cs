@@ -10,7 +10,7 @@
         internal static StatePatternTurnstileState lockedState = new LockedTurnstileState();
         internal static StatePatternTurnstileState unlockedState = new UnlockedTurnstileState();
         private TurnstileController turnstileController;
-        internal StatePatternTurnstileState state = unlockedState;
+        private StatePatternTurnstileState state = unlockedState;
 
         public void Coin()
         {
