@@ -49,6 +49,7 @@
     <Compile Include="SMC\FSMError.cs" />
     <Compile Include="SMC\Turnstile.cs" />
     <Compile Include="SMC\TurnstileActions.cs" />
+    <Compile Include="SMC\TurnstileFSM.cs" />
     <Compile Include="StatePattern\LockedTurnstileState.cs" />
     <Compile Include="StatePattern\StatePatternTurnstile.cs" />
     <Compile Include="StatePattern\StatePatternTurnstileState.cs" />
