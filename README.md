@@ -4,7 +4,7 @@
 
 ## SMC (State Machine Compiler)
 
-* [unclebob/smcjava](https://github.com/unclebob/smcjava"target="_blank)
+* [unclebob/smcjava](https://github.com/unclebob/smcjava)
 * RUNNING SMC -> java -classpath [smc.jar path] smc.Smc -g [language generator] [.sm file name]
   * Ex: java -classpath .\smc.jar smc.Smc -g smc.generator.csharp.SMCSharpGenerator turnstile.sm
   * ![](https://i.imgur.com/JqIB3sa.png)
