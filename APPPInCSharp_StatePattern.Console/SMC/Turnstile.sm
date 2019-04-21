@@ -1,0 +1,16 @@
+FSMName Turnstile
+Context TurnstileActions
+Initial Locked
+Exception FSMError
+{
+    Locked
+    {
+        Coin  Unlocked  Unlock
+        Pass  Locked    Alarm
+    }
+    Unlocked
+    {
+        Coin  Unlocked  Thankyou
+        Pass  Locked    Lock
+    }
+}
