@@ -46,8 +46,12 @@
     <Compile Include="Enums.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="StateTransitionTableTurnstile.cs" />
-    <Compile Include="SwitchCaseTurnstile.cs" />
+    <Compile Include="StatePattern\LockedTurnstileState.cs" />
+    <Compile Include="StatePattern\StatePatternTurnstile.cs" />
+    <Compile Include="StatePattern\StatePatternTurnstileState.cs" />
+    <Compile Include="StatePattern\UnlockedTurnstileState.cs" />
+    <Compile Include="STD\StateTransitionTableTurnstile.cs" />
+    <Compile Include="SwitchCase\SwitchCaseTurnstile.cs" />
     <Compile Include="TurnstileController.cs" />
   </ItemGroup>
   <ItemGroup>
